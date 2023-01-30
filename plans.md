@@ -29,3 +29,6 @@ Application should include:
 --- Content should be able to be edited and resubmitted in those input fields
 
 Use state and props heavily
+
+<!-- TODO: plan out static version of app -->
+<!-- TODO: plan out interactive version of app -->
