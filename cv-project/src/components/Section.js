@@ -10,7 +10,9 @@ class Section extends Component {
                     {this.props.sectionName}
                 </div>
                 <EditButton/>
-                <InformationForm/>
+                <InformationForm
+                    details={this.props.details}
+                />
             </div>
         );
     }
