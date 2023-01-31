@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import EditButton from './EditButton';
 import InformationForm from './InformationForm';
+import DisplayedInformation from './DisplayedInformation';
 
 class Section extends Component {
     render() {
@@ -13,6 +14,7 @@ class Section extends Component {
                 <InformationForm
                     details={this.props.details}
                 />
+                <DisplayedInformation/>
             </div>
         );
     }
