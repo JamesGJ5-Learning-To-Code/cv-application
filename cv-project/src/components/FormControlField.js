@@ -20,6 +20,7 @@ class FormControlField extends Component {
         const ControlType = this.getControlType();
         const control = <ControlType
             id={controlID}
+            value={this.props.value}
         />
         return control;
     }
