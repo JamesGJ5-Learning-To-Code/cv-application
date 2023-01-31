@@ -12,10 +12,16 @@ class Section extends Component {
             currentlyEditing: this.props.currentlyEditing
         }
         this.disableEditing = this.disableEditing.bind(this);
+        this.enableEditing = this.enableEditing.bind(this);
     }
     disableEditing() {
         this.setState({
             currentlyEditing: false
+        })
+    }
+    enableEditing() {
+        this.setState({
+            currentlyEditing: true
         })
     }
     render() {
