@@ -8,7 +8,9 @@ class InformationForm extends Component {
         const formControlFields = this.makeFormControlFieldList();
         return (
             <form className='InformationForm'>
-                <SubmitButton/>
+                <SubmitButton
+                    onDisablingEditing={this.props.onDisablingEditing}
+                />
                 {formControlFields}
             </form>
         );

@@ -43,6 +43,7 @@ class Section extends Component {
     makeInformationForm() {
         const informationForm = <InformationForm
             details={this.props.details}
+            onDisablingEditing={this.disableEditing}
         />
         return informationForm;
     }
