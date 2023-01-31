@@ -34,6 +34,7 @@ class App extends Component {
         />
         <Section
           sectionName='Educational Experience'
+          currentlyEditing={true}
           details={
             [
               {
@@ -56,6 +57,7 @@ class App extends Component {
         />
         <Section
           sectionName='Practical Experience'
+          currentlyEditing={true}
           details={
             [
               {
