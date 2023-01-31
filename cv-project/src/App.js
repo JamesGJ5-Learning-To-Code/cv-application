@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import Section from './components/Section'
 
+// TODO: replace App with CVApplication, and make a separate file for the App, 
+// so that it is more clear that the below is reusable (but then may have to 
+// put the configurations in App so that the below truly is reusable for other 
+// configurations)
 class App extends Component {
   render() {
     return (
