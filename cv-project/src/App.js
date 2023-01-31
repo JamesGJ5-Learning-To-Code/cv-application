@@ -15,18 +15,24 @@ class App extends Component {
           details={
             [
               {
+                detailReference: 'name',
                 detailControlLabelText: 'Name: ',
                 useTextarea: false,
+                detailValue: '',
                 detailHeadingText: ''
               },
               {
+                detailReference: 'email',
                 detailControlLabelText: 'Email: ',
                 useTextarea: false,
+                detailValue: '',
                 detailHeadingText: ''
               },
               {
+                detailReference: 'phoneNumber',
                 detailControlLabelText: 'Phone Number: ',
                 useTextarea: false,
+                detailValue: '',
                 detailHeadingText: ''
               }
             ]

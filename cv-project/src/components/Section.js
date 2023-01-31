@@ -11,8 +11,17 @@ class Section extends Component {
         this.state = {
             currentlyEditing: this.props.currentlyEditing
         }
+        this._initialiseDetailValueStates();
         this.disableEditing = this.disableEditing.bind(this);
         this.enableEditing = this.enableEditing.bind(this);
+    }
+    _initialiseDetailValueStates() {
+        // NOTE: only accessing state explicitly below because I have not yet 
+        // learnt much about life cycle methods like componentDidMount
+        this.state.detailValues = {}
+        this.props.details.forEach(({detailReference, detailValue}) => {
+            this.state.detailValues[detailReference] = detailValue;
+        });
     }
     disableEditing() {
         this.setState({
