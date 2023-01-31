@@ -62,5 +62,36 @@ Use state and props heavily
 - DisplayedDetail component:
 -- DONE Renders a span displaying detailHeadingText (may be an empty string if naming the detail is redundant)
 
+# Interactive version of app:
+
+States:
+
+- Within each Section:
+
+-- Whether or not editing is in progress:
+--- Affected by:
+---- Clicking EditButton (makes true)
+---- Clicking SubmitButton (makes false)
+--- Affects:
+---- When true:
+----- EditButton is NOT rendered
+----- InformationForm IS rendered
+----- DisplayedInformation is NOT rendered
+---- When false:
+----- EditButton IS rendered
+----- InformationForm is NOT rendered
+----- DisplayedInformation IS rendered
+--- Closest common ancestor of affected components:
+---- SECTION
+
+-- The value of each form control
+--- Affected by:
+---- onChange event of form control (makes new value equal to state)
+--- Affects:
+---- Value of each form control
+---- Value of second span in each DisplayedDetail component
+--- Closest common ancestor of affected components:
+---- SECTION
+
 1. Plan out interactive version of app
 2. Code up interactive version of app
