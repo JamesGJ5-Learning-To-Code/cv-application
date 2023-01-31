@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
+import EditButton from './EditButton';
 
 class Section extends Component {
     render() {
         return (
             <div>
-                {this.props.sectionName}
+                <div>
+                    {this.props.sectionName}
+                </div>
+                <EditButton/>
             </div>
         );
     }
