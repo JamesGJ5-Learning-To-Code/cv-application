@@ -4,7 +4,7 @@ import EditButton from './EditButton';
 class Section extends Component {
     render() {
         return (
-            <div>
+            <div className="Section">
                 <div>
                     {this.props.sectionName}
                 </div>
