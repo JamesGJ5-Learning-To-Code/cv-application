@@ -7,6 +7,7 @@ class App extends Component {
       <div className="App">
         <Section
           sectionName='General Information'
+          currentlyEditing={true}
           details={
             [
               {
