@@ -41,7 +41,9 @@ class Section extends Component {
                 this.makeInformationForm()
             :
                 <div>
-                    <EditButton/>
+                    <EditButton
+                        onEnablingEditing={this.enableEditing}
+                    />
                     {this.makeDisplayedInformation()}
                 </div>
         return shownComponents;
