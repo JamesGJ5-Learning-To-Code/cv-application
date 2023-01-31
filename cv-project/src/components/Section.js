@@ -11,10 +11,15 @@ class Section extends Component {
                     {this.props.sectionName}
                 </div>
                 <EditButton/>
+                {/* TODO: consider passing only the relevant aspects within
+                this.props.details to each of InformationForm and
+                DisplayedInformation */}
                 <InformationForm
                     details={this.props.details}
                 />
-                <DisplayedInformation/>
+                <DisplayedInformation
+                    details={this.props.details}
+                />
             </div>
         );
     }
