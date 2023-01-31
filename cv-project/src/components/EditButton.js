@@ -6,7 +6,7 @@ class EditButton extends Component {
             <button className='EditButton'>
                 Edit
             </button>
-        )
+        );
     }
 }
 

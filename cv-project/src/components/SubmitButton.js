@@ -6,7 +6,7 @@ class SubmitButton extends Component {
             <button className='SubmitButton'>
                 Submit
             </button>
-        )
+        );
     }
 }
 

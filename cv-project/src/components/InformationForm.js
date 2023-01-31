@@ -7,7 +7,7 @@ class InformationForm extends Component {
             <form className='InformationForm'>
                 <SubmitButton/>
             </form>
-        )
+        );
     }
 }
 
