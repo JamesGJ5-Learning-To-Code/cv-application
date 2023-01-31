@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import EditButton from './EditButton';
+import InformationForm from './InformationForm';
 
 class Section extends Component {
     render() {
@@ -9,6 +10,7 @@ class Section extends Component {
                     {this.props.sectionName}
                 </div>
                 <EditButton/>
+                <InformationForm/>
             </div>
         );
     }
