@@ -30,40 +30,37 @@ Application should include:
 
 Use state and props heavily
 
-# My workflow:
-
-Plan of static version of app:
+# DONE Static version of app:
 
 - App component:
--- Renders a Section component for each of 'General Information', 'Educational Experience' and 'Practical Experience'
+-- DONE Renders a Section component for each of 'General Information', 'Educational Experience' and 'Practical Experience'
 
 - Section component:
--- Renders a div displaying the name of the section (e.g. 'General Information')
--- Renders an EditButton component
--- Renders an InformationForm component
--- Renders a DisplayedInformation component
+-- DONE Renders a div displaying the name of the section (e.g. 'General Information')
+-- DONE Renders an EditButton component
+-- DONE Renders an InformationForm component
+-- DONE Renders a DisplayedInformation component
 
 - EditButton component:
--- Renders a button with 'Edit' as text content
+-- DONE Renders a button with 'Edit' as text content
 
 - InformationForm component:
--- Renders a SubmitButton component
--- Renders an InputField for each detail (e.g. 'Email' in 'General Information')
+-- DONE Renders a SubmitButton component
+-- DONE Renders a FormControlField for each detail (e.g. 'Email' in 'General Information')
 
 - SubmitButton component:
--- Renders a button with 'Submit' as text content
+-- DONE Renders a button with 'Submit' as text content
 
-- InputField component:
--- Renders a label with detailLabelText as text content
--- Renders an input of type detailInputType
--- Label linked via for attribute to input via input's ID, chosen by uniqid
+- FormControlField component:
+-- DONE Renders a label with detailLabelText as text content
+-- DONE Renders an input OR a textarea, based on props.useTextarea and whether it's true or false
+-- DONE Label linked via for attribute to input via input's ID, chosen by uniqid
 
 - DisplayedInformation component:
--- Renders a DisplayedDetail component for each detail
+-- DONE Renders a DisplayedDetail component for each detail
 
 - DisplayedDetail component:
--- Renders a div displaying detailHeadingText (may be an empty string if naming the detail is redundant)
+-- DONE Renders a span displaying detailHeadingText (may be an empty string if naming the detail is redundant)
 
-1. Code up static version of the app
-2. Plan out interactive version of app
-3. Code up interactive version of app
+1. Plan out interactive version of app
+2. Code up interactive version of app
