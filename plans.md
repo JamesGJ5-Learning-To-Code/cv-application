@@ -68,7 +68,7 @@ States:
 
 - Within each Section:
 
--- Whether or not editing is in progress:
+-- Whether or not editing is in progress (state called currentlyEditing):
 --- Affected by:
 ---- Clicking EditButton (makes true)
 ---- Clicking SubmitButton (makes false)
@@ -84,14 +84,40 @@ States:
 --- Closest common ancestor of affected components:
 ---- SECTION
 
--- The value of each form control
+-- The value of each form control (state called controlValues, which may contain a mapping of each detailName to its corresponding value):
 --- Affected by:
 ---- onChange event of form control (makes new value equal to state)
 --- Affects:
 ---- Value of each form control
----- Value of second span in each DisplayedDetail component
+---- Text content of second span in each DisplayedDetail component
 --- Closest common ancestor of affected components:
 ---- SECTION
 
-1. Plan out interactive version of app
-2. Code up interactive version of app
+1. Pass initial state for currentlyEditing (true) into the 'General Information' Section from App.js
+2. Initialise state for currentlyEditing in Section to be what is in Section's props
+3. In Section, if currentlyEditing is true, render InformationForm and DisplayedInformation but do NOT render EditButton; vice versa if currentlyEditing is false
+
+4. In Section, write a method disableEditing which sets currentlyEditing to false and bind it to the Section
+5. Pass the disableEditing method down to the InformationForm then to the SubmitButton via props
+6. In the SubmitButton, set up an onClick listener for the button and call disableEditing upon the section when said event triggers
+
+7. In Section, write a method enableEditing which sets currentlyEditing to true and bind it to the Section
+8. Pass the enableEditing method down to the InformationForm then to the SubmitButton via props
+9. In the SubmitButton, set up an onClick listener for the button and call enableEditing upon the Section when said event triggers
+
+10. Repeat Step 1 with the other Sections
+
+11. Pass initial state for controlValues (empty string for each) into the 'General Information' Section from App.js
+12. Initialise state for controlValues in Section to be what they are in Section's props
+
+13. Pass controlValues down to the InformationForm then to the FormControlField via props
+14. In FormControlField, set value to what it is in state
+
+15. In Section, write a method changeValue which changes the value of a particular detail in state to something new and bind it to the Section
+16. Pass the changeValue method down to the InformationForm then to the FormControlField via props
+17. In the FormControlField, set up an onChange listener for the control and call changeValue upon the Section when said event triggers
+
+18. Pass controlValues down to the DisplayedInformation then to the DisplayedDetail via props
+19. In DisplayedDetail, set the text content of the second span to what it is in state
+
+20. Repeat Step 11 with the other Sections
