@@ -10,4 +10,4 @@ class EditButton extends Component {
     }
 }
 
-export default EditButton
+export default EditButton;

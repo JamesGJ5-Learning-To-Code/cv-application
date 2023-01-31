@@ -9,4 +9,4 @@ class InformationForm extends Component {
     }
 }
 
-export default InformationForm
+export default InformationForm;
