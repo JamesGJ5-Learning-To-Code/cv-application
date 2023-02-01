@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import SubmitButton from './SubmitButton';
 import FormControlField from './FormControlField';
-import uniqid from 'uniqid';
 
 class InformationForm extends Component {
     render() {
