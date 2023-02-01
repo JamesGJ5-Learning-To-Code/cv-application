@@ -44,18 +44,24 @@ class App extends Component {
           details={
             [
               {
+                detailReference: 'schoolName',
                 detailControlLabelText: 'School Name: ',
                 useTextarea: false,
+                detailValue: '',
                 detailHeadingText: 'School Name: '
               },
               {
+                detailReference: 'titleOfStudy',
                 detailControlLabelText: 'Title of Study: ',
                 useTextarea: false,
+                detailValue: '',
                 detailHeadingText: 'Title of Study: '
               },
               {
+                detailReference: 'dateOfStudy',
                 detailControlLabelText: 'Date of Study: ',
                 useTextarea: false,
+                detailValue: '',
                 detailHeadingText: 'Date of Study: '
               }
             ]
@@ -67,23 +73,31 @@ class App extends Component {
           details={
             [
               {
+                detailReference: 'companyName',
                 detailControlLabelText: 'Company Name: ',
                 useTextarea: false,
+                detailValue: '',
                 detailHeadingText: 'Company Name: '
               },
               {
+                detailReference: 'positionTitle',
                 detailControlLabelText: 'Position Title: ',
                 useTextarea: false,
+                detailValue: '',
                 detailHeadingText: 'Position Title: '
               },
               {
+                detailReference: 'mainTask',
                 detailControlLabelText: 'Main Task: ',
                 useTextarea: true,
+                detailValue: '',
                 detailHeadingText: 'Main Task: '
               },
               {
+                detailReference: 'dateFrom',
                 detailControlLabelText: 'Date From: ',
                 useTextarea: true,
+                detailValue: '',
                 detailHeadingText: 'Date From: '
               }
             ]
