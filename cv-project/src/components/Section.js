@@ -69,6 +69,7 @@ class Section extends Component {
             onDisablingEditing={this.disableEditing}
             sectionState={this.state}
             onChangingValue={this.changeValue}
+            key={this.props.sectionName}
         />
         return informationForm;
     }

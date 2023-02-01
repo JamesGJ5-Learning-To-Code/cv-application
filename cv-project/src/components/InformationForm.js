@@ -38,7 +38,7 @@ class InformationForm extends Component {
             value={value}
             detailReference={detailReference}
             onChangingValue={this.props.onChangingValue}
-            key = {uniqid()}
+            key = {detailReference}
         />
         return formControlField;
     }
