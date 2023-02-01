@@ -76,6 +76,7 @@ class Section extends Component {
     makeDisplayedInformation() {
         const displayedInformation = <DisplayedInformation
             details={this.props.details}
+            sectionState={this.state}
         />
         return displayedInformation;
     }

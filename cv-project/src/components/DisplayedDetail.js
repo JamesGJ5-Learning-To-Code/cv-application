@@ -10,6 +10,7 @@ class DisplayedDetail extends Component {
                 {/* The below span will hold the value of the corresponding form
                 control when it is put into state */}
                 <span>
+                    {this.props.detailValue}
                 </span>
             </div>
         )
