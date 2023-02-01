@@ -96,7 +96,7 @@ class App extends Component {
               {
                 detailReference: 'dateFrom',
                 detailControlLabelText: 'Date From: ',
-                useTextarea: true,
+                useTextarea: false,
                 detailValue: '',
                 detailHeadingText: 'Date From: '
               },
