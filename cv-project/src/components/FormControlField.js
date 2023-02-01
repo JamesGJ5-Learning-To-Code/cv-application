@@ -2,6 +2,15 @@ import React, { Component } from 'react';
 import uniqid from 'uniqid';
 
 class FormControlField extends Component {
+    constructor(props) {
+        super(props);
+        this.handleControlClick = this.handleControlClick.bind(this);
+    }
+    handleControlClick(event) {
+        const detailReference = this.props.detailReference;
+        const newValue = event.target.value;
+        this.props.onChangingValue(detailReference, newValue);
+    }
     render() {
         const controlID = uniqid();
         const control = this.makeControl(controlID);
@@ -21,6 +30,7 @@ class FormControlField extends Component {
         const control = <ControlType
             id={controlID}
             value={this.props.value}
+            onChange={this.handleControlClick}
         />
         return control;
     }

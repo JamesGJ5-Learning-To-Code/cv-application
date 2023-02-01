@@ -14,13 +14,11 @@ class Section extends Component {
         this._initialiseDetailValueStates();
         this.disableEditing = this.disableEditing.bind(this);
         this.enableEditing = this.enableEditing.bind(this);
+        this.changeValue = this.changeValue.bind(this);
     }
     _initialiseDetailValueStates() {
-        // NOTE: only accessing state explicitly below because I have not yet 
-        // learnt much about life cycle methods like componentDidMount
-        this.state.detailValues = {}
         this.props.details.forEach(({detailReference, detailValue}) => {
-            this.state.detailValues[detailReference] = detailValue;
+            this.state[detailReference] = detailValue;
         });
     }
     disableEditing() {
@@ -32,6 +30,14 @@ class Section extends Component {
         this.setState({
             currentlyEditing: true
         })
+    }
+    changeValue(detailReference, newValue) {
+        this.setState({
+            // NOTE: below may not work if merging doesn't happen as expected
+            // detailValues: {
+                [detailReference] : newValue
+            // }
+        });
     }
     render() {
         const shownComponents = this.selectShownComponents();
@@ -61,7 +67,8 @@ class Section extends Component {
         const informationForm = <InformationForm
             details={this.props.details}
             onDisablingEditing={this.disableEditing}
-            detailValues={this.state.detailValues}
+            sectionState={this.state}
+            onChangingValue={this.changeValue}
         />
         return informationForm;
     }

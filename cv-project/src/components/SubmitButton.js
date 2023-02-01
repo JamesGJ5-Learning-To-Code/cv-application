@@ -5,6 +5,7 @@ class SubmitButton extends Component {
         super(props);
         this.handleClick = this.handleClick.bind(this);
     }
+    // TODO: prevent default behaviour
     handleClick() {
         this.props.onDisablingEditing();
     }

@@ -18,7 +18,7 @@ class App extends Component {
                 detailReference: 'name',
                 detailControlLabelText: 'Name: ',
                 useTextarea: false,
-                detailValue: '',
+                detailValue: 'dasd',
                 detailHeadingText: ''
               },
               {

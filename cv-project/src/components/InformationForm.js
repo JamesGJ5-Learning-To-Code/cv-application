@@ -24,23 +24,26 @@ class InformationForm extends Component {
                 this.makeFormControlField(
                     detail.detailControlLabelText,
                     detail.useTextarea,
-                    this.getDetailValue(detail.detailReference)
+                    detail.detailReference
                 )
             )
         }
         return formControlFields;
     }
-    makeFormControlField(controlLabelText, useTextarea, value) {
+    makeFormControlField(controlLabelText, useTextarea, detailReference) {
+        const value = this.getDetailValue(detailReference)
         const formControlField = <FormControlField
             detailLabelText={controlLabelText}
             useTextarea={useTextarea}
             value={value}
+            detailReference={detailReference}
+            onChangingValue={this.props.onChangingValue}
             key = {uniqid()}
         />
         return formControlField;
     }
     getDetailValue(detailReference) {
-        return this.props.detailValues[detailReference];
+        return this.props.sectionState[detailReference];
     }
 }
 
