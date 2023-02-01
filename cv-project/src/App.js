@@ -99,6 +99,13 @@ class App extends Component {
                 useTextarea: true,
                 detailValue: '',
                 detailHeadingText: 'Date From: '
+              },
+              {
+                detailReference: 'dateUntil',
+                detailControlLabelText: 'Date Until: ',
+                useTextarea: false,
+                detailValue: '',
+                detailHeadingText: 'Date Until: '
               }
             ]
           }
