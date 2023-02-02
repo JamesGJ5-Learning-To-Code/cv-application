@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Section from './components/Section'
 
 // TODO: replace App with CVApplication, and make a separate file for the App, 
