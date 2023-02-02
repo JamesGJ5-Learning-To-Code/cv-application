@@ -121,3 +121,8 @@ States:
 19. DONE In DisplayedDetail, set the text content of the second span to what it is in state
 
 20. DONE Repeat Step 11 with the other Sections
+
+# Functional Style:
+
+1. Replace existing code in ./cv-application with functional counterparts
+2. Look into using custom hooks to replace the need to use render props etc. (look at the video in the additional resources side of the relevant TOP lesson first)
