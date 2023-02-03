@@ -124,5 +124,5 @@ States:
 
 # Functional Style:
 
-1. Replace existing code in ./cv-application with functional counterparts
+1. DONE Replace existing code in ./cv-application with functional counterparts
 2. Look into using custom hooks to replace the need to use render props etc. (look at the video in the additional resources side of the relevant TOP lesson first)
