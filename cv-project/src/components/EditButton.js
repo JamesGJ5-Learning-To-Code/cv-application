@@ -1,23 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class EditButton extends Component {
-    constructor(props) {
-        super(props);
-        this.handleClick = this.handleClick.bind(this);
-    }
-    handleClick() {
-        this.props.onEnablingEditing();
-    }
-    render () {
-        return (
-            <button
-                className='EditButton'
-                onClick={this.handleClick}
-            >
-                Edit
-            </button>
-        );
-    }
-}
+const EditButton = (props) => {
+    const handleClick = () => {
+        props.onEnablingEditing();
+    };
+    return (
+        <button
+            className='EditButton'
+            onClick={handleClick}
+        >
+            Edit
+        </button>
+    );
+};
 
 export default EditButton;
