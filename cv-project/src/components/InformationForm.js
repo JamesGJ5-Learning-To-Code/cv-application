@@ -1,26 +1,30 @@
-import React, { Component } from 'react';
+import React from 'react';
 import SubmitButton from './SubmitButton';
 import FormControlField from './FormControlField';
 
-class InformationForm extends Component {
-    render() {
-        const formControlFields = this.makeFormControlFieldList();
-        return (
-            <form className='InformationForm'>
-                <SubmitButton
-                    onDisablingEditing={this.props.onDisablingEditing}
-                />
-                {formControlFields}
-            </form>
-        );
+const InformationForm = (props) => {
+    const getDetailValue = (detailReference) => {
+        return props.sectionState.allDetailValues[detailReference];
     }
-    makeFormControlFieldList() {
+    const makeFormControlField = (controlLabelText, useTextarea, detailReference) => {
+        const value = getDetailValue(detailReference);
+        const formControlField = <FormControlField
+            detailLabelText={controlLabelText}
+            useTextarea={useTextarea}
+            value={value}
+            detailReference={detailReference}
+            onChangingValue={props.onChangingValue}
+            key = {detailReference}
+        />
+        return formControlField;
+    };
+    const makeFormControlFieldList = () => {
         const formControlFields = [];
-        const details = this.props.details;
+        const details = props.details;
         for (let i = 0; i < details.length; i += 1) {
             const detail = details[i];
             formControlFields.push(
-                this.makeFormControlField(
+                makeFormControlField(
                     detail.detailControlLabelText,
                     detail.useTextarea,
                     detail.detailReference
@@ -29,21 +33,15 @@ class InformationForm extends Component {
         }
         return formControlFields;
     }
-    makeFormControlField(controlLabelText, useTextarea, detailReference) {
-        const value = this.getDetailValue(detailReference);
-        const formControlField = <FormControlField
-            detailLabelText={controlLabelText}
-            useTextarea={useTextarea}
-            value={value}
-            detailReference={detailReference}
-            onChangingValue={this.props.onChangingValue}
-            key = {detailReference}
-        />
-        return formControlField;
-    }
-    getDetailValue(detailReference) {
-        return this.props.sectionState.allDetailValues[detailReference];
-    }
-}
+    const formControlFields = makeFormControlFieldList();
+    return (
+        <form className='InformationForm'>
+            <SubmitButton
+                onDisablingEditing={props.onDisablingEditing}
+            />
+            {formControlFields}
+        </form>
+    );
+};
 
 export default InformationForm;
