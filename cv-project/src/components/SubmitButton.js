@@ -1,24 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class SubmitButton extends Component {
-    constructor(props) {
-        super(props);
-        this.handleClick = this.handleClick.bind(this);
-    }
+const SubmitButton = (props) => {
     // TODO: prevent default behaviour
-    handleClick() {
-        this.props.onDisablingEditing();
-    }
-    render() {
-        return (
-            <button
-                className='SubmitButton'
-                onClick={this.handleClick}
-            >
-                Submit
-            </button>
-        );
-    }
+    const handleClick = () => {
+        props.onDisablingEditing();
+    };
+    return (
+        <button
+            className='SubmitButton'
+            onClick={handleClick}
+        >
+            Submit
+        </button>
+    );
 }
 
 export default SubmitButton;
