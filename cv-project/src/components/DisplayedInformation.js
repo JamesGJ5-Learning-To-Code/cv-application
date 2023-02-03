@@ -1,34 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 import DisplayedDetail from './DisplayedDetail';
 import uniqid from 'uniqid'
 
-class DisplayedInformation extends Component {
-    render() {
-        const displayedDetailList = this.makeDisplayedDetailList();
-        return (
-            <div className='DisplayedInformation'>
-                {displayedDetailList}
-            </div>
-        );
+const DisplayedInformation = (props) => {
+    // TODO: consider refactoring with similar code in ./InformationForm.js, 
+    // maybe using a custom hook but not sure yet
+    const getDetailValue = (detailReference) => {
+        return props.sectionState.allDetailValues[detailReference];
     }
-    // TODO: consider refactoring the below with similar code found in
-    // ./InformationForm.js (particularly in makeFormControlList)
-    makeDisplayedDetailList() {
-        const displayedDetailList = [];
-        const details = this.props.details;
-        for (let i = 0; i < details.length; i += 1) {
-            const detail = details[i];
-            displayedDetailList.push(
-                this.makeDisplayedDetail(
-                    detail.detailHeadingText,
-                    detail.detailReference
-                )
-            )
-        }
-        return displayedDetailList;
-    }
-    makeDisplayedDetail(detailHeadingText, detailReference) {
-        const detailValue = this.getDetailValue(detailReference);
+    const makeDisplayedDetail = (detailHeadingText, detailReference) => {
+        const detailValue = getDetailValue(detailReference);
         const displayedDetail = <DisplayedDetail
             detailHeadingText={detailHeadingText}
             detailValue={detailValue}
@@ -36,10 +17,29 @@ class DisplayedInformation extends Component {
         />
         return displayedDetail;
     }
-    // TODO: consider refactoring with similar code in ./InformationForm.js
-    getDetailValue(detailReference) {
-        return this.props.sectionState.allDetailValues[detailReference];
+    // TODO: consider refactoring the below with similar code found in
+    // ./InformationForm.js (particularly in makeFormControlList), maybe using 
+    // a custom hook but not sure yet
+    const makeDisplayedDetailList = () => {
+        const displayedDetailList = [];
+        const details = props.details;
+        for (let i = 0; i < details.length; i += 1) {
+            const detail = details[i];
+            displayedDetailList.push(
+                makeDisplayedDetail(
+                    detail.detailHeadingText,
+                    detail.detailReference
+                )
+            )
+        }
+        return displayedDetailList;
     }
+    const displayedDetailList = makeDisplayedDetailList();
+    return (
+        <div className='DisplayedInformation'>
+            {displayedDetailList}
+        </div>
+    );
 }
 
 export default DisplayedInformation;
