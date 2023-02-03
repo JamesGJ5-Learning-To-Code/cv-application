@@ -38,7 +38,7 @@ class DisplayedInformation extends Component {
     }
     // TODO: consider refactoring with similar code in ./InformationForm.js
     getDetailValue(detailReference) {
-        return this.props.sectionState[detailReference];
+        return this.props.sectionState.allDetailValues[detailReference];
     }
 }
 

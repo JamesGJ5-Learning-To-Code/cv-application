@@ -30,7 +30,7 @@ class InformationForm extends Component {
         return formControlFields;
     }
     makeFormControlField(controlLabelText, useTextarea, detailReference) {
-        const value = this.getDetailValue(detailReference)
+        const value = this.getDetailValue(detailReference);
         const formControlField = <FormControlField
             detailLabelText={controlLabelText}
             useTextarea={useTextarea}
@@ -42,7 +42,7 @@ class InformationForm extends Component {
         return formControlField;
     }
     getDetailValue(detailReference) {
-        return this.props.sectionState[detailReference];
+        return this.props.sectionState.allDetailValues[detailReference];
     }
 }
 
